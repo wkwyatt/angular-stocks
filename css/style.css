@@ -1,0 +1,30 @@
+#wrapper {
+	width: 95%;
+	height: 96vh;
+	border: 1px solid green;
+	padding: 3px;
+	margin: 15px 5px 15px 30px;
+}
+
+#all-stocks {
+	width: 33%;
+	height: 95vh;
+	padding: 5px;
+	background-color: #e0e0e0;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.stock-positive {
+	color: green;
+}
+
+.stock-negative {
+	color: red;
+}

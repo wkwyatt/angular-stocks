@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="stocksApp">
+<head>
+	<title>Stocks Angular App</title>
+	<link rel="stylesheet" href="">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-git2.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<script type="text/javascript" src="js/angular.min.js"></script>
+	<script type="text/javascript" src="js/angular-route.min.js"></script> 
+
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/controller.js"></script>
+
+</head>
+<body ng-controller="stocksController">
+	<div id="wrapper">
+
+		<div id="all-stocks" class="left">
+			<form ng-submit="getStocks()">
+				<div id="stocks-header"><h4>What stocks would you like to search for? Separate with a comma(yahoo, google, apple)</h4>
+				</div>
+				<div id="stock-input">
+					<input class="form-control" type="text" ng-model="userStocks">
+				</div>
+			</form>
+			<div id="{{stock.Symbol}}" ng-click="loadStock(stock)" ng-repeat="stock in listOfStocks2">
+				<div class="company-name">{{stock.Name}}</div>
+				<div class="stock-change {{getChangeClass(stock.Change)}}">{{stock.Change}}</div>
+				<div class="stock-symbol">{{stock.Symbol}}</div>
+			</div>
+		</div>
+
+		<!-- Show the middle col with the stock details inside -->
+		<div id="single-stock" class="">
+			<div id="stock-filter">
+				Filter: <input type="text" ng-model="stockFilter">
+				<!-- new angular creat one div for each property in stock -->
+				<div id"" ng-repeat="detail in dataList | filter: stockFilter">
+					<div class="stock-properties">
+						<div class="stock-details">{{detail.prop}}</div>
+						<div class="stock-value">{{detail.value}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
